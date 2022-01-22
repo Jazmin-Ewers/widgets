@@ -15,11 +15,20 @@
     {% if widgets|length == 0 %}
         <h3>No Widgets Exist</h3>
     {% else %}
-        <ul>
+        <table class="pure-table pure-table-striped">
+            <tr>
+                <th> Description</th>
+                <th> Quantity </th>
+                <th> Delete </th>
+            </tr>
             {% for widget in widgets %}
-            <li>{{ widget }}</li>
+            <tr>
+                <td> {{ widget.description }} </td>
+                <td> {{ widget.quantity }}</td>
+                <td> <a href="">X</a> </td>
+            </tr>
             {% endfor %}
-        </ul>
+        </table>
     {% endif %}
     <hr>
     <h4>Add Widget</h4>

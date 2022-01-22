@@ -1,4 +1,3 @@
-from re import L
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from .models import Widget

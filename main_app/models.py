@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -7,8 +8,12 @@ from django.db import models
 # quantity - an IntegerField
 
 class Widget(models.Model):
-    desciption = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
     quantity = models.IntegerField()
+    
+    def get_absolute_url(self):
+        return reverse('index')  
+
 
 
 
