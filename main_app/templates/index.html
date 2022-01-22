@@ -12,7 +12,6 @@
 </head>
 <body>
     <h1>Wacky Widgets</h1>
-    <hr>
     {% if widgets|length == 0 %}
         <h3>No Widgets Exist</h3>
     {% else %}
@@ -22,5 +21,12 @@
             {% endfor %}
         </ul>
     {% endif %}
+    <hr>
+    <h4>Add Widget</h4>
+    <form class="pure-form" action="{% url 'widgets_create' %}" method="POST">
+        {% csrf_token %}
+        {{ widget_form.as_p }}
+        <input type="submit" class="pure-button" value="Add Widget">
+      </form>
 </body>
 </html>
